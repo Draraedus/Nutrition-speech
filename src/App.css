@@ -1,38 +1,73 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  row-gap: 20px;
+
+  padding: 40px;
+  border-radius: 10px;
+  
+  background-color: #f1f1f1;
+}
+
+.AppTitle {
+  text-align: center;
+}
+
+.AppTitle > h1{
+  font-size: 3.5em;
+  margin: 0;
+  color: #3EA025;
+}
+
+.AppTitle > h2{
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.AppContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.AppButton {
+  height: 60px;
+  width: 60px;
+
+  border-radius: 50%;
+  border: none;
+
+  background-color: #3EA025;
+}
+
+.AppButton > svg {
+  height: 75%;
+  width: 75%;
+  
   color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.PulseAnimation {
+  animation: shadowPulse 1s infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.PulseAnimation > svg {
+  height: 55%;
+  width: 55%;
+}
+
+@keyframes shadowPulse {
+  0% {
+      box-shadow: 0 0 0 5px rgba(80, 201, 50, 0.5);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+      box-shadow: 0 0 0 10px rgba(80, 201, 50, 1);
+  }
+  100% {
+      box-shadow: 0 0 0 5px rgba(80, 201, 50, 0.5);
   }
 }
