@@ -13,14 +13,14 @@ function App() {
     resetTranscript,
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
+  
+  const [result, setResult] = useState("");//chave para utlizar a api do gpt
+  const OPENAI_API_KEY = "INSIRA A CHAVE AQUI";
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
-
-  const [result, setResult] = useState("");//chave para utlizar a api do gpt
-  const OPENAI_API_KEY = "INSIRA A CHAVE AQUI";
-
+  
   //conexoa com a api do gpt para enviar o texto e exibir a resposta abaixo do botão do mic
   const sendQuestion = (question)=>{
     fetch("https://api.openai.com/v1/completions",{
@@ -67,7 +67,7 @@ function App() {
             className="AppButton PulseAnimation"
             onClick={SpeechRecognition.stopListening}
           >
-            <FaStop style={{ height: '70%', width: '70%' }}/>
+            <FaStop style={{ height: '50%', width: '50%' }}/>
           </button>
         ) : (
           <button
@@ -77,7 +77,7 @@ function App() {
               language: "pt-br",
             })}
           >
-            <FaUtensils style={{ height: '50%', width: '50%' }} />
+            <FaUtensils style={{ height: '52%', width: '52%' }} />
           </button>
         )}
         <button
