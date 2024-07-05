@@ -15,7 +15,7 @@ function App() {
   } = useSpeechRecognition();
   
   const [result, setResult] = useState("");//chave para utlizar a api do gpt
-  const OPENAI_API_KEY = "INSIRA A CHAVE AQUI";
+  const OPENAI_API_KEY = "Chave aqui";
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
@@ -31,7 +31,7 @@ function App() {
         Authorization: `Bearer ${OPENAI_API_KEY}`,
       },
       body: JSON.stringify({
-        model: "text-davinci-003",
+        model: "gpt-3.5-turbo",
         prompt: question,
         max_tokens: 2048,
         temperature: 0.5,
@@ -89,7 +89,7 @@ function App() {
       </div>
       <div className="ResultContainer">
         <p className="Transcript">{transcript}</p>
-        <div clasName="Result">{result}</div>
+        <div className="Result">{result}</div>
       </div>
     </div>
   );
